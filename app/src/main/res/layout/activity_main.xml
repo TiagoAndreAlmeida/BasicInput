@@ -37,6 +37,24 @@
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <CheckBox
+        android:id="@+id/green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verde" />
+
+    <CheckBox
+        android:id="@+id/red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vermelho" />
+
+    <CheckBox
+        android:id="@+id/blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Azul" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
@@ -63,4 +81,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Email:" />
+
+    <TextView
+        android:id="@+id/colorsChecked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
