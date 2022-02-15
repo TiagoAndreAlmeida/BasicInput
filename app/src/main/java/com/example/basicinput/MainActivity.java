@@ -5,18 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
+    private int progressvalue = 0;
     private TextInputEditText nameInputLayout, emailInputLayout;
     private CheckBox redCheckBox, greenCheckBox, blueCheckBox;
     private TextView nameTextView, emailTextView, colorsTextView, sexText;
     private RadioGroup radioGroupSex;
+
+    private ProgressBar horizontalProgress, circularProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         sexText = findViewById(R.id.sexText);
 
         handleRadioButton();
+
+        horizontalProgress = findViewById(R.id.progressBarHorizontal);
+        circularProgress = findViewById(R.id.progressBarCircular);
     }
 
     private void handleCheckBox () {
@@ -84,5 +92,23 @@ public class MainActivity extends AppCompatActivity {
         blueCheckBox.setChecked(false);
         radioGroupSex.clearCheck();
         sexText.setText("");
+    }
+
+    public void loadProgress(View view) {
+        if(horizontalProgress.getVisibility() == View.INVISIBLE) {
+            horizontalProgress.setVisibility(View.VISIBLE);
+            circularProgress.setVisibility(View.VISIBLE);
+        }
+
+        if(progressvalue < 100) {
+            progressvalue += 10;
+            horizontalProgress.setProgress(progressvalue);
+        } else {
+            horizontalProgress.setVisibility(View.INVISIBLE);
+            circularProgress.setVisibility(View.GONE);
+            progressvalue = 0;
+            Toast.makeText(getApplicationContext(), "Carregado com sucesso", Toast.LENGTH_LONG).show();
+        }
+
     }
 }
