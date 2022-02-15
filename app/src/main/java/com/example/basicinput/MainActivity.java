@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,12 +17,13 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
     private int progressvalue = 0;
+    private ProgressBar horizontalProgress, circularProgress;
+
     private TextInputEditText nameInputLayout, emailInputLayout;
     private CheckBox redCheckBox, greenCheckBox, blueCheckBox;
-    private TextView nameTextView, emailTextView, colorsTextView, sexText;
+    private TextView nameTextView, emailTextView, colorsTextView, sexText, belezaText;
     private RadioGroup radioGroupSex;
-
-    private ProgressBar horizontalProgress, circularProgress;
+    private SeekBar seekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +40,30 @@ public class MainActivity extends AppCompatActivity {
         blueCheckBox = findViewById(R.id.blue);
         radioGroupSex = findViewById(R.id.radioGroupSex);
         sexText = findViewById(R.id.sexText);
+        seekBar = findViewById(R.id.seekBar);
+        belezaText = findViewById(R.id.textViewbeleza);
 
         handleRadioButton();
 
         horizontalProgress = findViewById(R.id.progressBarHorizontal);
         circularProgress = findViewById(R.id.progressBarCircular);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                belezaText.setText("Beleza é: "+progress+ "/"+seekBar.getMax());
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     private void handleCheckBox () {

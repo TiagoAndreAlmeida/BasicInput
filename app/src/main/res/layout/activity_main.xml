@@ -1,137 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    app:layoutDescription="@xml/activity_main_scene"
-    tools:context=".MainActivity">
-
-    <ProgressBar
-        android:id="@+id/progressBarHorizontal"
-        style="?android:attr/progressBarStyleHorizontal"
+    android:layout_height="match_parent">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="0"
-        android:progressTint="@color/purple_500"
-        android:visibility="invisible" />
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layoutDescription="@xml/activity_main_scene"
+        tools:context=".MainActivity">
 
-    <ProgressBar
-        android:id="@+id/progressBarCircular"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <Button
-        android:id="@+id/buttonLoad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="loadProgress"
-        android:text="CARREGAR" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="6dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nameEditLayout"
+        <ProgressBar
+            android:id="@+id/progressBarHorizontal"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome" />
+            android:max="100"
+            android:progress="0"
+            android:progressTint="@color/purple_500"
+            android:visibility="invisible" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailEditLayout"
+        <ProgressBar
+            android:id="@+id/progressBarCircular"
+            style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:visibility="gone" />
 
-    <CheckBox
-        android:id="@+id/green"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Verde" />
-
-    <CheckBox
-        android:id="@+id/red"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Vermelho" />
-
-    <CheckBox
-        android:id="@+id/blue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Azul" />
-
-    <RadioGroup
-        android:id="@+id/radioGroupSex"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/radioButtonM"
+        <Button
+            android:id="@+id/buttonLoad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Masculino" />
+            android:onClick="loadProgress"
+            android:text="CARREGAR" />
 
-        <RadioButton
-            android:id="@+id/radioButtonF"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Femenino" />
-    </RadioGroup>
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:onClick="onSubmit"
-        android:text="Enviar" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameEditLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="clearText"
-        android:text="Limpar" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nome: " />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp">
 
-    <TextView
-        android:id="@+id/emailTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email:" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/colorsChecked"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/green"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verde" />
 
-    <TextView
-        android:id="@+id/sexText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/red"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vermelho" />
 
-</LinearLayout>
+        <CheckBox
+            android:id="@+id/blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Azul" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupSex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/radioButtonF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Femenino" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nível de Beleza" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:onClick="onSubmit"
+            android:text="Enviar" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clearText"
+            android:text="Limpar" />
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome: " />
+
+        <TextView
+            android:id="@+id/emailTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:" />
+
+        <TextView
+            android:id="@+id/colorsChecked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/sexText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewbeleza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>
